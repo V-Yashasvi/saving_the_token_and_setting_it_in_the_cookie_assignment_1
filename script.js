@@ -5,7 +5,7 @@ const jwt_secret=process.env.JWT_SECRET
 
 const encrypt = (payload) => {
   // encrypt the payload and return token
-  return jwt.sign(payload, jwt_secret, {expiresIn: '1h'})
+  return jwt.sign(payload, jwt_secret, {algorithm: 'HS256' ,expiresIn: '1h'})
 }
 
 const decrypt = (token) => {
